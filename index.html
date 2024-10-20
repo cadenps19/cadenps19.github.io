@@ -44,6 +44,42 @@
         </ul>
     </section>
 
+
+    <!-- Customer Review Carousel -->
+<section id="reviews" class="section">
+    <h2>Customer Reviews</h2>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item">
+                <h3>Jane Doe</h3>
+                <div class="stars">
+                    ★★★★☆
+                </div>
+                <p>"A fantastic read! Couldn't put it down."</p>
+            </div>
+            <div class="carousel-item">
+                <h3>John Smith</h3>
+                <div class="stars">
+                    ★★★★★
+                </div>
+                <p>"An inspiring book that touched my heart."</p>
+            </div>
+            <div class="carousel-item">
+                <h3>Emily White</h3>
+                <div class="stars">
+                    ★★★★☆
+                </div>
+                <p>"Well written and thought-provoking."</p>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-controls">
+        <button id="prev">←</button>
+        <button id="next">→</button>
+    </div>
+</section>
+
+
     <!-- Contact Section -->
     <section id="contact" class="section">
         <h2>Contact Me</h2>
@@ -68,5 +104,50 @@
     <footer>
         <p>&copy; 2024 Jan Bloch. All rights reserved.</p>
     </footer>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentIndex = 0;
+        const totalItems = carousel.children.length;
+        const autoSlideInterval = 3000; // 3 seconds
+    
+        // Function to update carousel position
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+    
+        // Auto slide function
+        function autoSlide() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        }
+    
+        // Set up auto-slide to change reviews every few seconds
+        let slideInterval = setInterval(autoSlide, autoSlideInterval);
+    
+        // Event listeners for next/prev buttons
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+            resetAutoSlide();
+        });
+    
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateCarousel();
+            resetAutoSlide();
+        });
+    
+        // Function to reset auto slide when user interacts with buttons
+        function resetAutoSlide() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(autoSlide, autoSlideInterval);
+        }
+    </script>
+    
+    
 </body>
 </html>
