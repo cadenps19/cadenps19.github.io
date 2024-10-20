@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#author">Author</a></li>
+                <li><a href="#about-the-book">About the Book</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="home-content">
+            <img src="JanAuthorPhoto.jpeg" alt="Author Photo" class="author-photo">
+            <h1>About Me</h1>
+            <p>Hello! I'm [Your Name], the author of [Your Book Title]. Here's a short bio about me...</p>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section id="author" class="section">
+        <h2>Author</h2>
+        <p>Here, you can write a more detailed biography about yourself, your writing journey, and your inspirations.</p>
+    </section>
+
+    <!-- Where to Buy Section -->
+    <section id="about-the-book" class="section">
+        <h2>Where to Buy</h2>
+        <img src="BookCover.jpeg" alt="Book Cover" class="book-cover">
+        <p>Find my book at the following retailers:</p>
+        <ul>
+            <li><a href="https://www.amazon.com">Amazon</a></li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <form action="https://formsubmit.co/cadenps19@yahoo.com" method="post">
+            <input type="hidden" name="_subject" value="New Website Submission!">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p>Email: your.email@example.com</p>
+        <div class="social-links">
+            <a href="https://twitter.com">Twitter</a>
+            <a href="https://instagram.com">Instagram</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Jan Bloch. All rights reserved.</p>
+    </footer>
+</body>
+</html>
