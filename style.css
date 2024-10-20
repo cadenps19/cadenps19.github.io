@@ -80,6 +80,56 @@ nav ul li a:hover {
     margin: 20px 0;
 }
 
+/* Reviews Section */
+#reviews {
+    background-color: #fff;
+    padding: 40px 20px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.stars {
+    font-size: 24px;
+    color: gold;
+    margin: 10px 0;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.carousel-controls button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.carousel-controls button:hover {
+    background-color: #555;
+}
+
+
 /* Contact Form */
 form {
     display: flex;
