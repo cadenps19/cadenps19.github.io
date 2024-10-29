@@ -3,6 +3,20 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* Section Background Colors */
+.section:nth-child(even) {
+    background-color: #ffffff; /* White background for odd sections */
+}
+
+.section:nth-child(odd) {
+    background-color: #f4f4f4; /* Light gray background for even sections */
+}
+
+/* Padding and spacing for sections */
+.section {
+    padding: 60px 20px;
+}
+
 
 body {
     font-family: Arial, sans-serif;
@@ -49,12 +63,55 @@ nav ul li a:hover {
     text-align: center;
 }
 
+/* Home Section with Full-Width Image */
 #home {
-    background-color: #fff;
+    position: relative;
+    height: 75vh; /* Full viewport height */
+    overflow: hidden;
+    /* Remove spacing for the first section */
+    padding: 0;
+    margin: 0;
+
 }
 
+.home-background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.full-width-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.overlay-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.overlay-text p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
 #author, #where-to-buy, #contact {
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
     margin-top: 20px;
 }
 
@@ -69,8 +126,31 @@ nav ul li a:hover {
     transition: transform 0.3s ease;
 }
 
-.author-photo:hover {
-    transform: rotate(0deg); /* Straighten on hover */
+/* Author Section with Centered Text Block */
+#author {
+    padding: 60px 20px;
+    /* background-color: #f4f4f4; */
+    text-align: center;
+}
+
+.author-content {
+    max-width: 1200px; /* Adjust this width as desired */
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+#author h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+.book_cover {
+    
+    margin: 20px 100px;
 }
 
 
@@ -79,10 +159,36 @@ nav ul li a:hover {
     width: 200px;
     margin: 20px 0;
 }
+.book-content {
+    max-width: 1200px; /* Adjust this width as desired */
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Buy Button Styling */
+.buy-button {
+    display: inline-block;
+    background-color: #5bc0de; /* Light blue color */
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.buy-button:hover {
+    background-color: #46a5d4; /* Slightly darker blue on hover */
+}
 
 /* Reviews Section */
 #reviews {
-    background-color: #fff;
+    /* background-color: #f4f4f4; */
     padding: 40px 20px;
 }
 
@@ -118,7 +224,7 @@ nav ul li a:hover {
 
 .carousel-controls button {
     background-color: #333;
-    color: white;
+    color: #ffffff;
     border: none;
     padding: 10px;
     margin: 5px;
@@ -136,7 +242,12 @@ form {
     flex-direction: column;
     width: 300px;
     margin: 0 auto;
+    
 }
+
+/* .contact-section{
+    background-color: #ffffff;
+} */
 
 form input, form textarea {
     margin: 10px 0;
