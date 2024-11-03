@@ -25,6 +25,7 @@ body {
 }
 
 /* Navigation Bar */
+/* Header styling */
 header {
     background-color: #333;
     color: white;
@@ -34,27 +35,45 @@ header {
     z-index: 1000;
 }
 
-nav ul {
-    list-style: none;
+/* Container to position left and right items */
+.navbar-container {
     display: flex;
-    justify-content: center;
-    padding: 10px;
+    justify-content: space-between; /* Positions text on left and links on right */
+    align-items: center; /* Vertically centers content */
+    padding: 10px 20px;
 }
 
-nav ul li {
+/* Left-side text styling */
+.navbar-left h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: normal;
+    color: white;
+}
+
+/* Right-side navigation styling */
+.navbar-right ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-right ul li {
     margin: 0 15px;
 }
 
-nav ul li a {
+.navbar-right ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
 }
 
-nav ul li a:hover {
+.navbar-right ul li a:hover {
     color: #f4f4f4;
     text-decoration: underline;
 }
+
 
 /* Sections */
 .section {
@@ -63,10 +82,11 @@ nav ul li a:hover {
     text-align: center;
 }
 
+
 /* Home Section with Full-Width Image */
 #home {
     position: relative;
-    height: 75vh; /* Full viewport height */
+    height: 35vh; /* Full viewport height */
     overflow: hidden;
     /* Remove spacing for the first section */
     padding: 0;
@@ -83,19 +103,33 @@ nav ul li a:hover {
 .full-width-photo {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit:contain;
+    object-position: 75%;
+    background-color: rgb(33, 29, 29);
 }
+
+/* .full-width-photo {
+    background-image: url('JanPhotoNoBG.png');
+    background-size: contain; /* Keeps the aspect ratio without stretching 
+    background-repeat: no-repeat; /* Prevents the image from tiling 
+    background-position: left top; /* Positions the image to show the top-left 
+    width: 100%;
+    height: 100vh; /* Adjust height as needed 
+} */
+
 
 .overlay-text {
     position: absolute;
+    object-fit: contain ;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    left: 10%; /* Moves the text to the left side of the photo */
+    transform: translateY(-50%); /* Centers text vertically */
+    text-align: left; /* Left-aligns the text */
     color: white;
-    
+
     padding: 20px;
     border-radius: 10px;
+    max-width: 40%; /* Optional: controls text container width */
 }
 
 .overlay-text h1 {
@@ -148,10 +182,38 @@ nav ul li a:hover {
 }
 
 
-.book_cover {
-    
-    margin: 20px 100px;
+/* Container for book cover and text */
+/* Container for book cover and text with swapped sides */
+/* Centered Book and Text Container */
+.book_container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers content horizontally */
+    gap: 200px; /* Adds space between the book cover and text */
+    max-width: 800px; /* Limits the width of the content */
+    margin: 0 auto; /* Centers the container on the page */
+    /* padding: 0 20px; Adds padding on the sides for smaller screens */
+    flex-direction: row-reverse;
 }
+
+/* Book Cover Styling */
+.book_cover {
+    width: 200px;
+    height: auto;
+    
+}
+
+/* Book Info Text Styling */
+.book_info {
+    max-width: 400px; /* Keeps the text container from stretching too wide */
+}
+
+
+.book_info p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
 
 
 /* Book Cover */
@@ -185,6 +247,60 @@ nav ul li a:hover {
 .buy-button:hover {
     background-color: #46a5d4; /* Slightly darker blue on hover */
 }
+
+
+
+/* Author Biography Section */
+#author-biography {
+    background-color: #f9f9f9; /* Light background for contrast */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#author-biography h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Biography Content Layout */
+/* Biography Content Layout - Vertical Stack */
+.biography-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Stacks photo above the text */
+    gap: 20px;
+    max-width: none;
+    margin: 0 200px;
+    text-align: center;
+}
+
+
+/* Biography Photo */
+.biography-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 30%; /* Shifts the image slightly down within the circle */
+}
+
+
+/* Biography Text */
+/* Author Biography Text */
+#author-biography p {
+    max-width: none; /* Allows text to extend across the container */
+    width: 100%; /* Ensures the text fills the available space */
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: center; /* Keeps text centered within section */
+    margin: 0 auto; /* Centers the text container */
+    padding: 0 20px; /* Adds side padding for readability on smaller screens */
+}
+
+
 
 /* Reviews Section */
 #reviews {
@@ -286,3 +402,6 @@ footer {
 .social-links a:hover {
     color: #555;
 }
+
+
+
