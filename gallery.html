@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="style.css"> <!-- Ensure this path is correct -->
+    <style>
+        /* Include necessary styles for the gallery and lightbox directly for demonstration */
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        html{
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1; /* Fills available space to push footer down */
+        }
+
+        #photo-gallery {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        #photo-gallery h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            object-fit: cover;
+        }
+
+        .lightbox {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9); /* Dark background with opacity */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            transition: transform 0.25s ease; /* Smooth zoom */
+            cursor: zoom-in;
+        }
+
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .lightbox-content.zoomed {
+            cursor: zoom-out;
+            transform: scale(1.5); /* Zoom level */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="photo-gallery-page">
+
+<!-- Navigation Bar -->
+<header>
+    <div class="navbar-container">
+        <div class="navbar-left">
+            <h1>Jan Cameron Bloch</h1>
+        </div>
+        <nav class="navbar-right">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Photo Gallery</a></li>
+                <li><a href="#author">Author Note</a></li>
+                <li><a href="#about-the-book">About the Book</a></li>
+                <li><a href="#author-biography">Author Biography</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section id="photo-gallery" class="section">
+        <h2>Photo Gallery</h2>
+        <div class="gallery-grid">
+            <img src="GalleryPhotos/BookOnTable.jpeg" alt="Photo 1" onclick="openLightbox(this)">
+            <img src="GalleryPhotos/PeopleAroundBook.jpeg" alt="Photo 2" onclick="openLightbox(this)">
+            <!-- Add more photos as needed -->
+        </div>
+    </section>
+</main>
+
+<div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightboxImage" alt="">
+</div>
+
+<script>
+    // Open lightbox and display clicked image
+    function openLightbox(imgElement) {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightboxImage");
+        
+        lightboxImage.src = imgElement.src; // Set clicked image as lightbox source
+        lightbox.style.display = "flex"; // Show lightbox
+    }
+
+    // Close lightbox
+    function closeLightbox() {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightboxImage");
+        
+        lightbox.style.display = "none";
+        lightboxImage.classList.remove("zoomed"); // Reset zoom state
+    }
+
+    // Toggle zoom on click
+    document.getElementById("lightboxImage").onclick = function() {
+        this.classList.toggle("zoomed");
+    };
+</script>
+
+<footer>
+    <p>&copy; 2024 Jan Bloch. All rights reserved.</p>
+</footer>
+</body>
+</html>
+
+
+
