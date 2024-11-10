@@ -29,6 +29,19 @@
         
     </header>
 
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('header');
+    const homeSection = document.querySelector('#home');
+    const headerHeight = header.offsetHeight;
+    
+
+    homeSection.style.paddingTop = `${headerHeight}px`;
+    
+});
+
+</script>
+
     <!-- Home Section with Full-Width Background Image and Text Overlay -->
 <section id="home" class="bookSection">
     <div class="home-background">
