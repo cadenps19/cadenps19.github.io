@@ -4,11 +4,11 @@
     box-sizing: border-box;
 }
 /* Section Background Colors */
-.section:nth-child(even) {
+.section:nth-child(odd) {
     background-color: #ffffff; /* White background for odd sections */
 }
 
-.section:nth-child(odd) {
+.section:nth-child(even) {
     background-color: #f4f4f4; /* Light gray background for even sections */
 }
 
@@ -86,7 +86,7 @@ header {
 /* Home Section with Full-Width Image */
 #home {
     position: relative;
-    height: 35vh; /* Full viewport height */
+    height: 40vh; /* Full viewport height */
     overflow: hidden;
     /* Remove spacing for the first section */
     padding: 0;
@@ -98,6 +98,7 @@ header {
     position: relative;
     width: 100%;
     height: 100%;
+    background-color: rgb(33, 29, 29);
 }
 
 .full-width-photo {
@@ -105,30 +106,30 @@ header {
     height: 100%;
     object-fit:contain;
     object-position: 75%;
-    background-color: rgb(33, 29, 29);
+    max-width: 40%;
+    
 }
 
-/* .full-width-photo {
-    background-image: url('JanPhotoNoBG.png');
-    background-size: contain; /* Keeps the aspect ratio without stretching 
-    background-repeat: no-repeat; /* Prevents the image from tiling 
-    background-position: left top; /* Positions the image to show the top-left 
+.header_book {
+    position: relative;
     width: 100%;
-    height: 100vh; /* Adjust height as needed 
-} */
+    height: 100%;
+    object-fit:contain;
+    object-position: 25%;
+    max-width: 50%;
+}
 
 
 .overlay-text {
     position: absolute;
     object-fit: contain ;
     top: 50%;
-    left: 10%; /* Moves the text to the left side of the photo */
+    left: 45%; /* Moves the text to the left side of the photo */
     transform: translateY(-50%); /* Centers text vertically */
     text-align: left; /* Left-aligns the text */
     color: white;
-
-    padding: 20px;
-    border-radius: 10px;
+    /* padding: 20px; */
+    /* border-radius: 10px; */
     max-width: 40%; /* Optional: controls text container width */
 }
 
