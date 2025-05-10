@@ -182,6 +182,33 @@ header {
     color: #333;
 }
 
+#presentation {
+    padding: 60px 20px;
+    /* background-color: #f4f4f4; */
+    text-align: center;
+}
+
+.presentation-content {
+    max-width: 1200px; /* Adjust this width as desired */
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+#presentation h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#presentation ul {
+    text-align: left;         /* Aligns the list text to the left */
+    padding-left: 40px;       /* Adds some spacing from the left edge */
+    display: inline-block;    /* Ensures list doesn't stretch full width when inside center-aligned parent */
+}
+
+
 
 /* Container for book cover and text */
 /* Container for book cover and text with swapped sides */
@@ -487,6 +514,40 @@ footer {
         width: 95%;
     }
 }
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 40%; /* Show smaller video on large screens */
+    margin: 0 auto; /* Center the video */
+    padding-bottom: 22.5%; /* Adjusted for 16:9 aspect ratio on 40% width */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* On smaller screens, let it take full width */
+@media (max-width: 768px) {
+    .video-container {
+        max-width: 100%;
+        padding-bottom: 56.25%; /* Standard 16:9 ratio */
+    }
+}
+
+@media (max-width: 768px) {
+    .header_book {
+        display: none;
+    }
+}
+
 
 
 
