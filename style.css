@@ -404,5 +404,89 @@ footer {
     color: #555;
 }
 
+/* ===== Responsive Additions ===== */
+
+/* Hamburger Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+}
+
+/* Responsive Navigation Menu */
+@media (max-width: 768px) {
+    .navbar-right ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #333;
+        width: 100%;
+        display: none;
+        padding: 10px 0;
+    }
+
+    .navbar-right ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar-right ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+/* Responsive Section Layout */
+@media (max-width: 768px) {
+    .book_container {
+        flex-direction: column-reverse;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .book_info, .book_cover {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .biography-content {
+        margin: 0 20px;
+    }
+
+    .overlay-text {
+        max-width: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .overlay-text h1 {
+        font-size: 2rem;
+    }
+
+    .overlay-text p {
+        font-size: 1rem;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    .carousel-container {
+        width: 95%;
+    }
+}
+
 
 
