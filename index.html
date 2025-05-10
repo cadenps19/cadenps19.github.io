@@ -8,28 +8,35 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <header>
-        
-            <div class="navbar-container">
-                <div class="navbar-left">
-                    <h1>Jan Cameron Bloch</h1> 
-                    
-                </div>
-                <nav class="navbar-right">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="gallery.html">Photo Gallery</a></li>
-                        <li><a href="#author">Author Note</a></li>
-                        <li><a href="#about-the-book">About the Book</a></li>
-                        <li><a href="#author-biography">Author Biography</a></li>
-                        <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="#contact">Contact Me</a></li>
-                    </ul>
-                </nav>
-            </div>
-       
-        
-    </header>
+<header>
+    <div class="navbar-container">
+        <div class="navbar-left">
+            <h1>Jan Cameron Bloch</h1>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="navbar-right">
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Photo Gallery</a></li>
+                <li><a href="#author">Author Note</a></li>
+                <li><a href="#about-the-book">About the Book</a></li>
+                <li><a href="#author-biography">Author Biography</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+            </ul>
+        </nav>
+        <script>
+  document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.getElementById('menu').classList.toggle('show');
+  });
+</script>
+
+    </div>
+</header>
 
    
 <script>
@@ -140,27 +147,6 @@
                 <p>"What a treasure!<br>I've been a Christian my whole life, born into a family strong in faith, and raised in the church. <br>Reading this brings me back to conversations with my beloved mom and how she explained what it meant to believe and have faith. <br>Each page of this book is like a glass of cool water. <br>Highly Recommend"</p>
             </div>
             <div class="carousel-item">
-                <h3>Stacy Hill</h3>
-                <div class="stars">
-                    ★★★★★
-                </div>
-                <p>"It was such a blessing to hear Jan’s story and about her book.  My friend suffers from severe depression.  She will love the book and find the hymns, scriptures, and lessons comforting.  Thank you!"</p>
-            </div>
-            <div class="carousel-item">
-                <h3>Nancy Tiller</h3>
-                <div class="stars">
-                    ★★★★★
-                </div>
-                <p>"What a sweet book; a lovely legacy for family and friends.  I enjoyed every page.  Thank you!"</p>
-            </div>
-            <div class="carousel-item">
-                <h3>Teresa Palmer</h3>
-                <div class="stars">
-                    ★★★★★
-                </div>
-                <p>"I really enjoyed Jan’s “Author Talk.”  She is a gifted communicator.  I admire her faith and dedication to the Lord."</p>
-            </div>
-            <div class="carousel-item">
                 <h3>Julianna Williamson</h3>
                 <div class="stars">
                     ★★★★★
@@ -187,7 +173,7 @@
     <section id="contact" class="section">
         <div class="contact-section">
         <h2>Contact Me</h2>
-        <form action="https://formsubmit.co/jbloch417@gmail.com" method="post">
+        <form action="https://formsubmit.co/cadenps19@yahoo.com" method="post">
             <input type="hidden" name="_subject" value="New Website Submission!">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
